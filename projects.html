@@ -1,0 +1,41 @@
+---
+layout: default
+title: Projects
+permalink: /projects.html
+---
+
+<section class="two">
+  <div class="container">
+    <header><h2>Projects</h2></header>
+    <p>This page lists repos that publish to GitHub Pages (HTML in <code>docs/</code>).</p>
+    <div class="row" id="project-grid"></div>
+  </div>
+</section>
+
+<script>
+  const GH_USER = "YOUR_GITHUB_USERNAME";
+  const pagesUrl = (repo) => `https://${GH_USER}.github.io/${repo.name}/`;
+  const card = (repo) => `
+    <div class="col-4 col-12-mobile">
+      <article class="item">
+        <a href="${pagesUrl(repo)}" target="_blank" rel="noopener" class="image fit">
+          <img src="/images/pic04.jpg" alt="">
+        </a>
+        <header>
+          <h3>${repo.name}</h3>
+          <p>${repo.description ?? ""}</p>
+          <p><small>Updated: ${new Date(repo.updated_at).toLocaleDateString()}</small></p>
+          <p><a href="${pagesUrl(repo)}" target="_blank" rel="noopener">Open site</a> · <a href="${repo.html_url}" target="_blank" rel="noopener">Repo</a></p>
+        </header>
+      </article>
+    </div>`;
+  fetch(`https://api.github.com/users/${GH_USER}/repos?per_page=100&sort=updated`)
+    .then(r => r.json())
+    .then(repos => {
+      const show = repos.filter(r => r.has_pages && !r.fork && !r.archived);
+      document.getElementById('project-grid').innerHTML =
+        show.length ? show.map(card).join('') :
+        '<p>No published project sites yet. Enable Pages with <code>docs/index.html</code>.</p>';
+    })
+    .catch(() => document.getElementById('project-grid').innerHTML = '<p>Could not load projects right now.</p>');
+</script>
