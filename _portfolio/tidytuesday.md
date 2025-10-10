@@ -3,7 +3,7 @@ title: "TidyTuesday"
 excerpt: "Weekly data viz & EDA from the #TidyTuesday project<br/><img src='/images/TidyTuesday.png'>"
 collection: portfolio
 permalink: /portfolio/tidytuesday/
-redirect_to: https://yourname.github.io/tidytuesday/
+redirect_to: https://chaudharyz.github.io/tidytuesday/
 # Optional: a date to control grid ordering
 # date: 2025-10-10
 ---
