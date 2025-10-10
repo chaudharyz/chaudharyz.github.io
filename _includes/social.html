@@ -1,0 +1,34 @@
+{% comment %}
+Reusable social icons block.
+It pulls links from `author` in _config.yml (like ORCID, GitHub, etc.).
+Usage: {% include social.html %}
+{% endcomment %}
+
+{% assign author = site.author %}
+
+<ul class="social-icons">
+  {% if author.email %}
+  <li><a href="mailto:{{ author.email }}" title="Email" class="fa fa-envelope"></a></li>
+  {% endif %}
+
+  {% if author.github %}
+  <li><a href="https://github.com/{{ author.github }}" title="GitHub" class="fab fa-github"></a></li>
+  {% endif %}
+
+  {% if author.linkedin %}
+  <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}" title="LinkedIn" class="fab fa-linkedin"></a></li>
+  {% endif %}
+
+  {% if author.twitter %}
+  <li><a href="https://x.com/{{ author.twitter }}" title="Twitter" class="fab fa-twitter"></a></li>
+  {% endif %}
+
+  {% if author.orcid %}
+  <li><a href="https://orcid.org/{{ author.orcid }}" title="ORCID" class="ai ai-orcid"></a></li>
+  {% endif %}
+
+  {% if author.researchgate %}
+  <li><a href="https://www.researchgate.net/profile/{{ author.researchgate }}" title="ResearchGate" class="ai ai-researchgate"></a></li>
+  {% endif %}
+
+</ul>

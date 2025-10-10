@@ -1,0 +1,328 @@
+/* ===== Global font (visible change) ===== */
+body {
+    font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    // color: #222;
+    /* light mode body text */
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    // color: #111;
+}
+
+/* Code font */
+code,
+pre {
+    font-family: "JetBrains Mono", "Courier New", monospace;
+}
+
+/* ===== Navigation / masthead text only (not icons) ===== */
+.masthead,
+.greedy-nav,
+.greedy-nav a,
+.site-title,
+.masthead__menu-item,
+.site-nav,
+.site-nav a {
+    font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ===== Sidebar text ONLY (do NOT target .sidebar * ) ===== */
+.sidebar .author__content,
+.sidebar .author__name,
+.sidebar .author__bio,
+.nav__list a,
+.nav__list-item {
+    font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Footer text */
+.page__footer,
+.page__footer * {
+    font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ===== Restore icons (Font Awesome) ===== */
+/* Font-based icons */
+.fa,
+.fas,
+.far {
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 900;
+}
+
+.fab {
+    font-family: "Font Awesome 5 Brands" !important;
+    font-weight: 400;
+}
+
+/* SVG icons (Minimal Mistakes often uses SVG) */
+svg.svg-inline--fa {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    vertical-align: -0.125em;
+    fill: currentColor;
+    /* inherit link color */
+    font-family: initial !important;
+    /* ensure our font override doesn't affect SVG */
+}
+
+/* Make sure social icons in the sidebar look right */
+.author__urls a .fa,
+.author__urls a .fab,
+.author__urls a .far,
+.author__urls a .fas,
+.author__urls a svg.svg-inline--fa {
+    margin-right: .35em;
+}
+
+/* ===== Light mode link colors (nicer palette) ===== */
+a {
+    color: #11ade6;
+}
+
+a:hover {
+    color: #019fbb;
+}
+
+
+/* ============================
+   SIDEBAR POLISH
+   ============================ */
+
+/* --- 1. Make country line match the rest --- */
+.author__bio,
+.author__urls-wrapper,
+.author__content p {
+  font-size: 0.95rem;
+  color: inherit;
+}
+
+/* --- 2. Fix Twitter/X icon (force bird icon) --- */
+.author__urls a[href*="x.com"] .fab:before,
+.author__urls a[href*="twitter.com"] .fab:before {
+  content: "\f099"; /* Font Awesome Twitter bird */
+  font-family: "Font Awesome 5 Brands";
+}
+
+/* --- 3. Make profile photo larger & clean border --- */
+.sidebar .author__avatar img {
+  width: 250px; /* increase size */
+  height: auto;
+  border-radius: 10px; /* soft rounded corners */
+  border: none; /* remove white border */
+  box-shadow: none; /* remove drop shadow */
+  margin-bottom: .5rem;
+}
+/* --- Make author name larger and bold --- */
+.sidebar .author__name {
+  font-size: 1.5rem;   /* increase from ~1.1–1.2rem */
+  font-weight: 700;    /* bold */
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+  color: inherit;      /* keep consistent in dark/light mode */
+  text-align: left;  /* stay centered with the avatar */
+}
+
+/* --- Center it nicely --- */
+.sidebar .author__avatar {
+  text-align: center;
+}
+/* ===== Sidebar: clean alignment, slightly larger icons ===== */
+/* --- Make ALL icons (FA + Academicons) the same, slightly larger size --- */
+.author__urls li .fa,
+.author__urls li .fas,
+.author__urls li .far,
+.author__urls li .fab,
+.author__urls li svg.svg-inline--fa,
+.author__urls li .ai {        /* <-- Academicons (ORCID, RG, etc.) */
+  width: 1.0em;
+  height: 1.0em;
+  font-size: 1.1rem;          /* bump size */
+  line-height: 1;
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* --- Brand colors for the ICONS only (text stays neutral) --- */
+.author__urls a[href*="orcid.org"] .ai { color: #a6ce39; }     /* ORCID green */
+.author__urls a[href*="researchgate.net"] .ai { color: #5fc428; } /* ResearchGate */
+.author__urls a[href*="github.com"] .fab { color: #181717; }   /* GitHub */
+.author__urls a[href*="linkedin.com"] .fab { color: #0a66c2; } /* LinkedIn */
+.author__urls a[href*="twitter.com"] .fab,
+.author__urls a[href*="x.com"] .fab { color: #1da1f2; }        /* Twitter bird */
+
+/* (Optional) Email + location neutral tone */
+.author__urls a[href^="mailto:"] .fa { color: #4b5563; }       /* envelope */
+.author__location .fa { color: #4b5563; }                      /* pin */
+
+/* Keep link text color neutral, but tint on hover */
+.author__urls a { color: inherit; }
+.author__urls a:hover { color: #11ade6; }
+
+
+/* ===== Sidebar positioning ===== */
+.sidebar {
+  margin-left: 5rem;        /* move the whole sidebar inward from window edge */
+  margin-right: 3rem;       /* increase space between sidebar and main content */
+  max-width: 270px;         /* optional: slightly narrower for a modern look */
+}
+
+/* keep consistent spacing when sticky */
+.sidebar.sticky {
+  left: 1rem;
+}
+
+/* ===== 1) Center page content, stop edge-to-edge ===== */
+.page__inner-wrap {
+  max-width: 2100px;     /* try 980–1140 to taste */
+  margin: 0 auto;        /* center */
+  padding: 0.5rem 0.25rem;
+  box-sizing: border-box;
+}
+
+/* Make archive cards, meta, etc. respect the container */
+// .page__content,
+// .archive,
+// .archive__item,
+// .page__meta {
+//   max-width: 100%;
+// }
+
+// /* Images never overflow the container */
+// .page__content img {
+//   max-width: 100%;
+//   height: auto;
+// }
+
+/* ===== 2) Top nav (masthead) alignment & width ===== */
+.masthead {
+  padding: 0;                 /* remove extra vertical padding */
+  border-bottom: 2px solid var(--global-border-color);
+}
+
+.masthead__inner-wrap {
+  max-width: 1200px;      /* same width as content */
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  box-sizing: border-box;
+}
+
+.greedy-nav {
+  display: flex;
+  align-items: right;
+  justify-content: center; 
+  gap: 1rem;
+  border-bottom: 0px solid var(--global-border-color);
+}
+
+.greedy-nav .site-title {
+  margin-right: 10rem;     /* pushes links to the right */
+  display: inline-block;
+  padding: 0.75rem 0;
+}
+greedy-nav .visible-links {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin-left: auto;           /* push links to the right */
+}
+
+.greedy-nav .visible-links a {
+  padding: 0.75rem 0;     /* equal vertical rhythm */
+  line-height: 1.2;
+}
+/* Unify page width for header + content */
+// .masthead__inner-wrap,
+// .initial-content,
+// .page__inner-wrap {
+//   max-width: 1200px;      /* 1040–1240 usually looks best */
+//   margin: 0 auto;
+//   padding: 0 1.25rem;
+//   box-sizing: border-box;
+// }
+/* unify header + content width to the new $x-large */
+.masthead__inner-wrap,
+.initial-content,
+.page__inner-wrap {
+  max-width: 1280px !important;  /* match the $x-large you set */
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  box-sizing: border-box;
+}
+
+/* ===== 3) Footer aligned to same width ===== */
+/* If you used the .footer-flex wrapper earlier: */
+.footer-flex {
+  max-width: 1100px;      /* match content width */
+  margin: 0 auto;         /* center */
+  padding: 0.5rem 1.25rem;
+  box-sizing: border-box;
+}
+
+/* If you DIDN'T use .footer-flex, fall back to: */
+.page__footer {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+.page__footer .page__footer-copyright {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ===== Footer cleanup ===== */
+
+/* 1) Make the footer slim and centered */
+.page__footer {
+  padding-top: 0.1rem;
+  padding-bottom: 0rem;
+  text-align: center;
+}
+
+/* 2) Social icons row: no bullets, proper spacing, centered */
+.page__footer .social-icons,
+.page__footer .footer-social {
+  list-style: none !important;   /* kill the • bullet */
+  margin: 0rem 0 0rem !important;
+  padding: 0.1rem 0 0rem 0 !important; /* much tighter */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.page__footer .social-icons li { margin: 0; }
+
+/* 3) Icon color and hover (works for FA + Academicons + SVG) */
+.page__footer .social-icons a,
+.page__footer .footer-social a,
+.page__footer .social-icons .fa,
+.page__footer .social-icons .fab,
+.page__footer .social-icons .far,
+.page__footer .social-icons .fas,
+.page__footer .social-icons .ai,
+.page__footer .social-icons svg {
+  color: #ffffff;                 /* white on blue footer */
+  opacity: 0.9;
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.page__footer .social-icons a:hover { opacity: 1; transform: translateY(-1px); }
+
+/* 4) Copyright line: lighter, centered, tight spacing */
+.page__footer-copyright {
+  color: rgba(255,255,255,0.9);   /* readable on blue */
+  font-size: 0.4rem;
+  margin-top: 0.15rem;
+}

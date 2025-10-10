@@ -1,0 +1,80 @@
+/* ==========================================================================
+   DEFAULT THEME
+   ========================================================================== */
+
+/* Color codes used for the theme */
+$gray                       : #7a8288;
+$dark-gray                  : mix(#000, $gray, 40%);
+$darker-gray                : mix(#000, $gray, 60%);
+$light-gray                 : mix(#fff, $gray, 50%);
+$lighter-gray               : mix(#fff, $gray, 90%);
+
+/* Color codes used for the site */
+$danger-color               : #ee5f5b;
+$info-color                 : #2f7f93;
+$notice-color               : #7a8288;
+$success-color              : #62c462;
+$warning-color              : #f89406;
+
+/* Other basic settings for the template */
+$border-radius              : 4px;
+$box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
+$global-transition          : all 0.2s ease-in-out;
+$masthead-height            : 70px;
+$navicon-width              : 28px;
+$navicon-height             : 4px;
+$sidebar-link-max-width     : 250px;
+$sidebar-screen-min-width   : 1024px;
+
+/* Default light theme for the site */
+:root {
+    --global-base-color                 : #{$gray};
+    --global-bg-color                   : #ffffff;
+    --global-footer-bg-color            : #f2f3f3;
+    --global-border-color               : #{$lighter-gray};
+    --global-dark-border-color          : #bdc1c4;
+    --global-code-background-color      : #fafafa;
+    --global-code-text-color            : #{$darker-gray};
+    --global-fig-caption-color          : mix(#fff,  #{$dark-gray}, 25%);
+    --global-link-color                 : #52adc8;
+    --global-link-color-hover           : mix(#000, #2f7f93, 25%);
+    --global-link-color-visited         : mix(#fff, #2f7f93, 25%);  
+    --global-masthead-link-color        : #{$dark-gray};
+    --global-masthead-link-color-hover  : mix(#000, #{$gray}, 25%);    
+    --global-text-color                 : #{$dark-gray};
+    --global-text-color-light           : #{$light-gray};
+    --global-thead-color                : #{$lighter-gray};
+}
+
+// /* ---------- Warm Blue LIGHT theme ---------- */
+// :root {
+//   /* base neutrals */
+//   --global-base-color:         #5c6773;        /* muted slate for subtle elements */
+//   --global-text-color:         #363a3f;        /* main body text (dark graphite) */
+//   --global-text-color-light:   #7a8aa0;        /* secondary text */
+
+//   /* page backgrounds */
+//   --global-bg-color:           #f5f9ff;        /* soft warm blue page bg */
+//   --global-footer-bg-color:    #eef3fb;        /* slightly deeper blue for footer */
+
+//   /* borders & table heads */
+//   --global-border-color:       #d9e4f7;        /* light blue border */
+//   --global-dark-border-color:  #b7c7e6;        /* darker border for emphasis */
+//   --global-thead-color:        #edf2fb;        /* table header bg */
+
+//   /* links / accents */
+//   --global-link-color:         #1b75d0;        /* primary accent (warm blue) */
+//   --global-link-color-hover:   #0f4a91;        /* hover: deeper blue */
+//   --global-link-color-visited: #6b7fd6;        /* visited: indigo-blue */
+
+//   /* masthead */
+//   --global-masthead-link-color:        #3b4a5c;
+//   --global-masthead-link-color-hover:  #1f2d40;
+
+//   /* code blocks */
+//   --global-code-background-color: #f4f7ff;     /* very pale blue */
+//   --global-code-text-color:       #0f2b5a;     /* navy-ish for code */
+
+//   /* figure captions (lighter slate) */
+//   --global-fig-caption-color:     #6b7787;
+// }
