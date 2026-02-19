@@ -10,4 +10,3 @@ author_profile: true
 - **Posters** → [Posters](/posters/)  
 - **Conferences** → brief summary + links
 
-*(We can auto-list each collection here if you like—say the word and I’ll wire it up.)*
